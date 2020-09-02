@@ -28,5 +28,4 @@ public interface Six {
     // Find numbers which are divisible by given number
         int[] divisibleBy(final int[] numbers, final int divider);
 
-
 }
