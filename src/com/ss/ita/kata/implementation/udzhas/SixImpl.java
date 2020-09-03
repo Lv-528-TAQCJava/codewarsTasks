@@ -5,11 +5,12 @@ import com.ss.ita.kata.Six;
 public class SixImpl implements Six {
     @Override
     public int liters(double time) {
-        return 0;
+        return (int) Math.floor(time / 2);
     }
 
     @Override
-    public double getVolumeOfCuboid(double length, double width, double height) { return length*width*height;
+    public double getVolumeOfCuboid(double length, double width, double height) {
+        return length*width*height;
     }
 
     @Override
