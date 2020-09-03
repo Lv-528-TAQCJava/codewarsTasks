@@ -5,7 +5,7 @@ import com.ss.ita.kata.Six;
 import java.text.DecimalFormat;
 
 public class SixImpl implements Six {
-    // const
+
     private static final float LITER = 4.54609188f;
     private static final float KILOMETER = 1.609344f;
 
