@@ -5,7 +5,7 @@ import com.ss.ita.kata.Six;
 public class SixImpl implements Six {
     @Override
     public int liters(double time) {
-        return 0;
+        return (int) Math.floor(time / 2);
     }
 
     @Override
@@ -47,4 +47,5 @@ public class SixImpl implements Six {
     public int[] divisibleBy(int[] numbers, int divider) {
         return new int[0];
     }
+
 }
