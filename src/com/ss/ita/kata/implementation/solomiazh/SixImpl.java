@@ -2,21 +2,34 @@ package com.ss.ita.kata.implementation.solomiazh;
 
 import com.ss.ita.kata.Six;
 
+import java.text.DecimalFormat;
+
 public class SixImpl implements Six {
+    // const
+    private static final float LITER = 4.54609188f;
+    private static final float KILOMETER = 1.609344f;
+
     @Override
     public int liters(double time) {
-        return 0;
+        return (int) (time / 2);
 
     }
+
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
-        return length*width*height;
+
+        return 0;
     }
 
     @Override
     public float mpgToKPM(float mpg) {
-        return 0;
+
+        double res = (mpg * KILOMETER / LITER * 100) / 100;
+        DecimalFormat myFormatter = new DecimalFormat("###.##");
+        String output = myFormatter.format(res);
+        return Float.parseFloat(output);
     }
+
 
     @Override
     public int[] squareOrSquareRoot(int[] array) {
