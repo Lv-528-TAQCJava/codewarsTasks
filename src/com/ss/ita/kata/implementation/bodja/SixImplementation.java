@@ -1,11 +1,11 @@
-package com.ss.ita.kata.implementation.udzhas;
+package com.ss.ita.kata.implementation.bodja;
 
 import com.ss.ita.kata.Six;
 
-public class SixImpl implements Six {
+public class SixImplementation implements Six {
     @Override
     public int liters(double time) {
-        return (int) Math.floor(time / 2);
+        return (int)(time * 0.5);
     }
 
     @Override
@@ -47,5 +47,4 @@ public class SixImpl implements Six {
     public int[] divisibleBy(int[] numbers, int divider) {
         return new int[0];
     }
-
 }
