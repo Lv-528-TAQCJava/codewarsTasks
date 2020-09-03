@@ -1,30 +1,77 @@
 package com.ss.ita.kata;
 
 public interface Six {
-    // Keep Hydrated!
-        int liters(final double time);
 
-    // Volume of cuboid
-        double getVolumeOfCuboid(final double length, final double width, final double height);
+    /**
+     * Keep Hydrated!
+     *
+     * @param time
+     * @return
+     */
+    int liters(final double time);
 
-    // Miles per gallon to kilometers per liter
-        float mpgToKPM(final float mpg);
+    /**
+     * Volume of cuboid
+     *
+     * @param length
+     * @param width
+     * @param height
+     * @return
+     */
+    double getVolumeOfCuboid(final double length, final double width, final double height);
 
-    // To square root or no to square
-        int[] squareOrSquareRoot(final int[] array);
+    /**
+     * Miles per gallon to kilometers per liter
+     *
+     * @param mpg
+     * @return
+     */
+    float mpgToKPM(final float mpg);
 
-    // Count of positives / sum of negatives
-        int[] countPositivesSumNegatives(final int[] input);
+    /**
+     * To square root or no to square
+     *
+     * @param array
+     * @return
+     */
+    int[] squareOrSquareRoot(final int[] array);
 
-    // Convert a String to a Number!
-        int stringToNumber(final String str);
+    /**
+     * Count of positives / sum of negatives
+     *
+     * @param input
+     * @return
+     */
+    int[] countPositivesSumNegatives(final int[] input);
 
-    // Wilson primes
-        boolean amIWilson(final double n);
+    /**
+     * @param str
+     * @return
+     */
+    int stringToNumber(final String str);
 
-    //Formatting decimal places
-        double twoDecimalPlaces(final double number);
+    /**
+     * Wilson primes
+     *
+     * @param n
+     * @return
+     */
+    boolean amIWilson(final double n);
 
-    // Find numbers which are divisible by given number
-        int[] divisibleBy(final int[] numbers, final int divider);
+    /**
+     * Formatting decimal places
+     *
+     * @param number
+     * @return
+     */
+    double twoDecimalPlaces(final double number);
+
+    /**
+     * Find numbers which are divisible by given number
+     *
+     * @param numbers
+     * @param divider
+     * @return
+     */
+    int[] divisibleBy(final int[] numbers, final int divider);
 }
