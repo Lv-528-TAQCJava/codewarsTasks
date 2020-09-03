@@ -8,4 +8,5 @@ public class SixImpl implements Six {
    public int liters (double time) {
        return (int)(time / 2);
    }
+  
 }
