@@ -3,11 +3,11 @@ package com.ss.ita.kata.implementation.rsavu98;
 import com.ss.ita.kata.Six;
 
 public class SixImpl implements Six {
-
-   @Override
-   public int liters (double time) {
-       return (int)(time / 2);
-   }
+  
+    @Override
+    public int liters (double time) {
+        return (int)(time / 2);
+    }
 
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
@@ -43,6 +43,7 @@ public class SixImpl implements Six {
     public double twoDecimalPlaces(double number) {
         return 0;
     }
+  
 
     @Override
     public int[] divisibleBy(int[] numbers, int divider) {
