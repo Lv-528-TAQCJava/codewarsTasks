@@ -11,14 +11,14 @@ public class SixImpl implements Six {
 
     @Override
     public int liters(double time) {
-        return (int) (time / 2);
 
+        return (int) (time / 2);
     }
 
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
 
-        return 0;
+        return length * width * height;
     }
 
     @Override
