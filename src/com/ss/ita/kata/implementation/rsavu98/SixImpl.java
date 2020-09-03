@@ -49,3 +49,4 @@ public class SixImpl implements Six {
         return new int[0];
     }
 }
+
