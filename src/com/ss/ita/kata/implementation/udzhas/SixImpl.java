@@ -9,7 +9,8 @@ public class SixImpl implements Six {
     }
 
     @Override
-    public double getVolumeOfCuboid(double length, double width, double height) { return length*width*height;
+    public double getVolumeOfCuboid(double length, double width, double height) {
+        return length*width*height;
     }
 
     @Override
