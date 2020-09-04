@@ -4,13 +4,8 @@ import com.ss.ita.kata.Eight;
 
 import java.text.DecimalFormat;
 
-<<<<<<< HEAD:src/com/ss/ita/kata/implementation/solomiazh/SixImpl.java
-public class SixImpl implements Six {
-
-=======
 public class EightImpl implements Eight {
-    // const
->>>>>>> d3c3e279d298909510e5a18ddd210dd145b5fb6d:src/com/ss/ita/kata/implementation/solomiazh/EightImpl.java
+
     private static final float LITER = 4.54609188f;
     private static final float KILOMETER = 1.609344f;
 
