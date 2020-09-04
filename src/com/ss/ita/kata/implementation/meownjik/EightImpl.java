@@ -1,17 +1,13 @@
 package com.ss.ita.kata.implementation.meownjik;
 
-import com.ss.ita.kata.Six;
+import com.ss.ita.kata.Eight;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import static java.lang.Integer.parseInt;
 
-public class SixImpl implements Six {
-    //Для mpgToKPM
-    public static final double litresInGallon = 4.54609188;
-    public static final double kilometresInMile = 1.609344;
-    //Для порівняння double
-    public static final double epsilon = 1e-10;
+public class EightImpl implements Eight {
+    public static final double EPSILON = 1e-10; //For comparing double
 
     @Override
     public int liters(double time) {
@@ -26,7 +22,7 @@ public class SixImpl implements Six {
     @Override
     public float mpgToKPM(float mpg) {
         //ml / g => km / l
-        double res = mpg / litresInGallon * kilometresInMile;
+        double res = mpg / LITRES_IN_GALLON * KILOMETRES_IN_MILE;
         return (float) Math.round(res * 100)/100;
     }
 
@@ -35,7 +31,7 @@ public class SixImpl implements Six {
         int[] res = new int[array.length];
         for(int i = 0; i<array.length; i++){
             double root = Math.sqrt(array[i]);
-            if (Math.abs(root - (int) root) < epsilon){
+            if (Math.abs(root - (int) root) < EPSILON){
                 res[i] = (int) root;
             }
             else {
@@ -73,12 +69,6 @@ public class SixImpl implements Six {
         int p = (int) n;
         if (p<=1)
             return false;
-        /*double val = (factorial(p-1)+1) / (p*p);
-        //if (Math.abs(val - (long) val) < eps)
-        if (val == (long) val)
-          return true;
-        else
-          return false;*/
         return (((factorial(new BigDecimal(p-1)).add(BigDecimal.ONE))
                 .remainder(new BigDecimal(p*p)))
                 .compareTo(BigDecimal.ZERO) == 0);
@@ -89,12 +79,6 @@ public class SixImpl implements Six {
             return BigDecimal.ONE;
         else {
             return n.multiply(factorial(n.subtract(BigDecimal.ONE)));
-            /*BigDecimal prod = BigDecimal.ONE;
-            BigDecimal N = new BigDecimal(n);
-            for (BigDecimal i = new BigDecimal(2); i.compareTo(N) == -1; i.add(BigDecimal.ONE))
-                prod.multiply(i);
-
-            return prod;*/
         }
     }
 

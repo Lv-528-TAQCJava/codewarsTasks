@@ -1,12 +1,11 @@
-package com.ss.ita.kata.implementation.ProstoLeleka;
+package com.ss.ita.kata.implementation.bodja;
 
+import com.ss.ita.kata.Eight;
 
-import com.ss.ita.kata.Six;
-
-public class SixImpl implements Six {
+public class EightImplementation implements Eight {
     @Override
     public int liters(double time) {
-        return (int) (time/2);
+        return (int)(time * 0.5);
     }
 
     @Override
