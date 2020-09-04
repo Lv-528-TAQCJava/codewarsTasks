@@ -30,31 +30,78 @@ public class EightImpl implements Eight {
 
     @Override
     public int[] squareOrSquareRoot(int[] array) {
-        return new int[0];
+
+        for (int i = 0; i < array.length; i++) {
+            if (Math.sqrt(array[i]) % 1 == 0) {
+                array[i] = (int) Math.sqrt(array[i]);
+            } else array[i] = array[i] * array[i];
+        }
+        return array;
     }
+
 
     @Override
     public int[] countPositivesSumNegatives(int[] input) {
-        return new int[0];
+
+        if (input == null || input.length == 0)
+            return new int[]{};
+
+        int[] result = new int[2];
+        for (int j : input) {
+            if (j > 0)
+                result[0]++;
+            else
+                result[1] += j;
+        }
+        return result;
     }
 
     @Override
     public int stringToNumber(String str) {
-        return 0;
+
+        return Integer.parseInt(str);
     }
 
     @Override
     public boolean amIWilson(double n) {
-        return false;
+
+        long p = (long) n;
+        if (p < 2)
+            return false;
+        long fact = 1;
+        for (int i = 2; i < p; i++) {
+            fact = fact * i;
+            fact = fact % (p * p);
+        }
+        return (fact + 1) % (p * p) == 0;
     }
 
     @Override
     public double twoDecimalPlaces(double number) {
-        return 0;
+
+        DecimalFormat myFormatter = new DecimalFormat("###.##");
+        String output = myFormatter.format(number);
+        return Double.parseDouble(output);
     }
 
     @Override
     public int[] divisibleBy(int[] numbers, int divider) {
-        return new int[0];
+
+        int arrLenght = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % divider == 0) {
+                arrLenght++;
+            }
+        }
+        int[] res = new int[arrLenght];
+        int k = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % divider == 0) {
+                res[k] = numbers[i];
+                k++;
+            }
+        }
+
+        return res;
     }
 }
