@@ -6,9 +6,6 @@ import java.text.DecimalFormat;
 
 public class EightImpl implements Eight {
 
-    private static final float LITER = 4.54609188f;
-    private static final float KILOMETER = 1.609344f;
-
     @Override
     public int liters(double time) {
 
