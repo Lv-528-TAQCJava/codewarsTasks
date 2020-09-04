@@ -1,27 +1,40 @@
-package com.ss.ita.kata.implementation.udzhas;
+package com.ss.ita.kata.implementation.solomiazh;
 
-import com.ss.ita.kata.Six;
+import com.ss.ita.kata.Eight;
 
+import java.text.DecimalFormat;
+
+<<<<<<< HEAD:src/com/ss/ita/kata/implementation/solomiazh/SixImpl.java
 public class SixImpl implements Six {
-    public static final double litresInGallon = 4.54609188;
-    public static final double kilometresInMile = 1.609344
+
+=======
+public class EightImpl implements Eight {
+    // const
+>>>>>>> d3c3e279d298909510e5a18ddd210dd145b5fb6d:src/com/ss/ita/kata/implementation/solomiazh/EightImpl.java
+    private static final float LITER = 4.54609188f;
+    private static final float KILOMETER = 1.609344f;
 
     @Override
     public int liters(double time) {
-        return (int) Math.floor(time / 2);
+        return (int) (time / 2);
+
     }
 
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
-        return length * width * height;
+
+        return 0;
     }
 
     @Override
     public float mpgToKPM(float mpg) {
-        double res = mpg / litresInGallon * kilometresInMile;
-        return (float) Math.round(res * 100) / 100;
 
+        double res = (mpg * KILOMETER / LITER * 100) / 100;
+        DecimalFormat myFormatter = new DecimalFormat("###.##");
+        String output = myFormatter.format(res);
+        return Float.parseFloat(output);
     }
+
 
     @Override
     public int[] squareOrSquareRoot(int[] array) {
@@ -52,5 +65,4 @@ public class SixImpl implements Six {
     public int[] divisibleBy(int[] numbers, int divider) {
         return new int[0];
     }
-
 }

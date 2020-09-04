@@ -1,22 +1,22 @@
-package com.ss.ita.kata.implementation.rsavu98;
+package com.ss.ita.kata.implementation.ProstoLeleka;
 
-import com.ss.ita.kata.Six;
 
-public class SixImpl implements Six {
-  
+import com.ss.ita.kata.Eight;
+
+public class EightImpl implements Eight {
     @Override
-    public int liters (double time) {
-        return (int)(time / 2);
+    public int liters(double time) {
+        return (int) (time/2);
     }
 
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
-        return length * width * height;
+        return 0;
     }
 
     @Override
     public float mpgToKPM(float mpg) {
-        return (float)Math.round(mpg * 1.609344 / 4.54609188 * 100) / 100;
+        return 0;
     }
 
     @Override
@@ -43,11 +43,9 @@ public class SixImpl implements Six {
     public double twoDecimalPlaces(double number) {
         return 0;
     }
-  
 
     @Override
     public int[] divisibleBy(int[] numbers, int divider) {
         return new int[0];
     }
 }
-

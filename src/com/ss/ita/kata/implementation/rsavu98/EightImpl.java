@@ -1,35 +1,23 @@
-package com.ss.ita.kata.implementation.solomiazh;
+package com.ss.ita.kata.implementation.rsavu98;
 
-import com.ss.ita.kata.Six;
+import com.ss.ita.kata.Eight;
 
-import java.text.DecimalFormat;
-
-public class SixImpl implements Six {
-
-    private static final float LITER = 4.54609188f;
-    private static final float KILOMETER = 1.609344f;
-
+public class EightImpl implements Eight {
+  
     @Override
-    public int liters(double time) {
-        return (int) (time / 2);
-
+    public int liters (double time) {
+        return (int)(time / 2);
     }
 
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
-
-        return 0;
+        return length * width * height;
     }
 
     @Override
     public float mpgToKPM(float mpg) {
-
-        double res = (mpg * KILOMETER / LITER * 100) / 100;
-        DecimalFormat myFormatter = new DecimalFormat("###.##");
-        String output = myFormatter.format(res);
-        return Float.parseFloat(output);
+        return (float)Math.round(mpg * 1.609344 / 4.54609188 * 100) / 100;
     }
-
 
     @Override
     public int[] squareOrSquareRoot(int[] array) {
@@ -55,9 +43,11 @@ public class SixImpl implements Six {
     public double twoDecimalPlaces(double number) {
         return 0;
     }
+  
 
     @Override
     public int[] divisibleBy(int[] numbers, int divider) {
         return new int[0];
     }
 }
+
