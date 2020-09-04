@@ -1,26 +1,22 @@
-package com.ss.ita.kata.implementation.udzhas;
+package com.ss.ita.kata.implementation.ProstoLeleka;
 
-import com.ss.ita.kata.Six;
 
-public class SixImpl implements Six {
-    public static final double litresInGallon = 4.54609188;
-    public static final double kilometresInMile = 1.609344
+import com.ss.ita.kata.Eight;
 
+public class EightImpl implements Eight {
     @Override
     public int liters(double time) {
-        return (int) Math.floor(time / 2);
+        return (int) (time/2);
     }
 
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
-        return length * width * height;
+        return 0;
     }
 
     @Override
     public float mpgToKPM(float mpg) {
-        double res = mpg / litresInGallon * kilometresInMile;
-        return (float) Math.round(res * 100) / 100;
-
+        return 0;
     }
 
     @Override
@@ -52,5 +48,4 @@ public class SixImpl implements Six {
     public int[] divisibleBy(int[] numbers, int divider) {
         return new int[0];
     }
-
 }

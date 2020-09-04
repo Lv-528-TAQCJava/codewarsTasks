@@ -1,23 +1,26 @@
-package com.ss.ita.kata.implementation.meownjik;
+package com.ss.ita.kata.implementation.udzhas;
 
-import com.ss.ita.kata.Six;
+import com.ss.ita.kata.Eight;
 
-
-public class SixImpl implements Six {
+public class EightImpl implements Eight {
+    public static final double litresInGallon = 4.54609188;
+    public static final double kilometresInMile = 1.609344;
 
     @Override
     public int liters(double time) {
-        return (int) Math.floor(time * 0.5);
+        return (int) Math.floor(time / 2);
     }
 
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
-        return 0;
+        return length * width * height;
     }
 
     @Override
     public float mpgToKPM(float mpg) {
-        return 0;
+        double res = mpg / litresInGallon * kilometresInMile;
+        return (float) Math.round(res * 100) / 100;
+
     }
 
     @Override
