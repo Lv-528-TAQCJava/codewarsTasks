@@ -4,31 +4,28 @@ import com.ss.ita.kata.Eight;
 
 import java.text.DecimalFormat;
 
+
 public class EightImpl implements Eight {
 
-    @Override
     public int liters(double time) {
 
         return (int) (time / 2);
     }
 
-    @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
 
         return length * width * height;
     }
 
-    @Override
     public float mpgToKPM(float mpg) {
 
-        double res = (mpg * KILOMETER / LITER * 100) / 100;
+        double res = (mpg * KILOMETRES_IN_MILE / LITRES_IN_GALLON * 100) / 100;
         DecimalFormat myFormatter = new DecimalFormat("###.##");
         String output = myFormatter.format(res);
         return Float.parseFloat(output);
     }
 
 
-    @Override
     public int[] squareOrSquareRoot(int[] array) {
 
         for (int i = 0; i < array.length; i++) {
@@ -40,7 +37,6 @@ public class EightImpl implements Eight {
     }
 
 
-    @Override
     public int[] countPositivesSumNegatives(int[] input) {
 
         if (input == null || input.length == 0)
@@ -56,13 +52,11 @@ public class EightImpl implements Eight {
         return result;
     }
 
-    @Override
     public int stringToNumber(String str) {
 
         return Integer.parseInt(str);
     }
 
-    @Override
     public boolean amIWilson(double n) {
 
         long p = (long) n;
@@ -76,7 +70,6 @@ public class EightImpl implements Eight {
         return (fact + 1) % (p * p) == 0;
     }
 
-    @Override
     public double twoDecimalPlaces(double number) {
 
         DecimalFormat myFormatter = new DecimalFormat("###.##");
@@ -84,7 +77,6 @@ public class EightImpl implements Eight {
         return Double.parseDouble(output);
     }
 
-    @Override
     public int[] divisibleBy(int[] numbers, int divider) {
 
         int arrLenght = 0;

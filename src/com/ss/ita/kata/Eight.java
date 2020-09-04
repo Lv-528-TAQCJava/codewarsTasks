@@ -1,5 +1,6 @@
 package com.ss.ita.kata;
 
+
 /**
  * For kata of 8 kyu
  */
