@@ -1,6 +1,14 @@
 package com.ss.ita.kata;
 
-public interface Six {
+/**
+ * For kata of 8 kyu
+ */
+public interface Eight {
+    /**
+     * For mpgToKPM method
+     */
+    double LITRES_IN_GALLON = 4.54609188;
+    double KILOMETRES_IN_MILE = 1.609344;
 
     /**
      * Keep Hydrated!
@@ -74,4 +82,5 @@ public interface Six {
      * @return
      */
     int[] divisibleBy(final int[] numbers, final int divider);
+
 }

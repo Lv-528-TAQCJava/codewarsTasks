@@ -1,11 +1,11 @@
-package com.ss.ita.kata.implementation.rsavu98;
+package com.ss.ita.kata.implementation.bodja;
 
-import com.ss.ita.kata.Six;
+import com.ss.ita.kata.Eight;
 
-public class SixImpl implements Six {
+public class EightImplementation implements Eight {
     @Override
     public int liters(double time) {
-        return 0;
+        return (int)(time * 0.5);
     }
 
     @Override

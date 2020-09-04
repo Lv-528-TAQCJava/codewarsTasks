@@ -1,13 +1,12 @@
-package com.ss.ita.kata.implementation.meownjik;
-
-import com.ss.ita.kata.Six;
+package com.ss.ita.kata.implementation.ProstoLeleka;
 
 
-public class SixImpl implements Six {
+import com.ss.ita.kata.Eight;
 
+public class EightImpl implements Eight {
     @Override
     public int liters(double time) {
-        return (int) Math.floor(time * 0.5);
+        return (int) (time/2);
     }
 
     @Override
@@ -49,5 +48,4 @@ public class SixImpl implements Six {
     public int[] divisibleBy(int[] numbers, int divider) {
         return new int[0];
     }
-
 }
