@@ -48,21 +48,48 @@ public class EightImpl implements Eight {
 
     @Override
     public int stringToNumber(String str) {
-        return 0;
+
+        return Integer.parseInt(str);
     }
 
     @Override
     public boolean amIWilson(double n) {
-        return false;
+
+        long p = (long) n;
+        if (p < 2)
+            return false;
+        long fact = 1;
+        for (int i = 2; i < p; i++) {
+            fact = fact * i;
+            fact = fact % (p * p);
+        }
+        return (fact + 1) % (p * p) == 0;
     }
 
     @Override
     public double twoDecimalPlaces(double number) {
-        return 0;
+
+        return (Math.round(number*100))/100.0;
     }
 
     @Override
     public int[] divisibleBy(int[] numbers, int divider) {
-        return new int[0];
+
+        int count = 0;
+        for (int number : numbers){
+            if (number % divider == 0){
+                count ++;
+            }
+        }
+        int[] arr = new int[count];
+        int i = 0;
+        for (int number : numbers){
+            if (number % divider == 0){
+                arr[i] = number;
+                i++;
+            }
+        }
+        return arr;
     }
+
 }
