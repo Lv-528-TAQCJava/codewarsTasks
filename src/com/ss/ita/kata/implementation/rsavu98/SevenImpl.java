@@ -40,17 +40,4 @@ public class SevenImpl implements Seven {
         } else return withoutBef;
     }
 
-    @Override
-    public long findNb(long m) {
-        long totalVolume = 0L;
-        int n = 0;
-        while (totalVolume < m) {
-            n++;
-            totalVolume += (long) Math.pow(n, 3);
-        }
-        if (totalVolume == m) {
-            return n;
-        }
-        return -1;
-    }
 }
