@@ -161,11 +161,8 @@ public class SixImpl implements Six {
     }
     public static HashMap<String, Integer> splitNameAndScore(String halfRecord) {
         int indexOfSplit;
-        //System.out.println(halfRecord);
         for (indexOfSplit = halfRecord.length()-1; !(" ".equals(""+halfRecord.charAt(indexOfSplit))); indexOfSplit--) {;}
-        //System.out.println(indexOfSplit);
         String name = halfRecord.substring(0, indexOfSplit);
-        //System.out.println(name);
         int count;
         try {
             count = Integer.parseInt(halfRecord.substring(indexOfSplit+1)); //+1 since we have to remove splitting space
