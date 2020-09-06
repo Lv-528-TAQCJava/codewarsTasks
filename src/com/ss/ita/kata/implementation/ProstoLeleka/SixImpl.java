@@ -1,5 +1,7 @@
 package com.ss.ita.kata.implementation.ProstoLeleka;
 
+import com.ss.ita.kata.Six;
+
 public class SixImpl implements Six {
     @Override
     public long findNb(long m){
@@ -16,15 +18,15 @@ public class SixImpl implements Six {
         }
     }
 
-    @Override
-    public static String balance(String book) {
+
+    public String balance(String book) {
         String t = book.replaceAll("([^\\n. \\da-zA-Z])", "");
         String[] arr = t.split("[\\n]+");
         double current = Double.parseDouble(arr[0]);
         double total = 0;
         int count = 0;
         StringBuilder result = new StringBuilder();
-        result.append("Original Balance: " + arr[0]);
+        result.append("Original Balance: ").append(arr[0]);
         for (int i = 1; i < arr.length; i++) {
             count++;
             String[] line = arr[i].split("[ ]+");
@@ -37,8 +39,17 @@ public class SixImpl implements Six {
         return result.toString();
     }
 
-        public static double f(double x) {
+        public  double f(double x) {
             return x / (1 + Math.sqrt(1 + x));
         }
 
+   public double  mean(String town, String strng){return 0;}
+
+   public double  variance(String town, String strng){return 0;}
+
+
+   public String nbaCup(String resultSheet, String toFind){return null;}
+
+
+  public   String  stockSummary(String[] lstOfArt, String[] lstOf1stLetter){return null;}
 }
