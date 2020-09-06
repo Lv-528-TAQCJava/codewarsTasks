@@ -38,19 +38,6 @@ public class SevenImpl implements Seven {
 
         return Math.min(p - bef, aft + 1);
     }
-
-
-    @Override
-    public long findNb(long m) {
-
-        long i = 0;
-        long sum = 0;
-        while (sum < m) {
-            i++;
-            sum += i * i * i;
-
-        }
-        return sum == m ? i : -1;
-    }
+    
 }
 
