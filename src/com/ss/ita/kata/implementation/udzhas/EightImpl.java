@@ -3,8 +3,6 @@ package com.ss.ita.kata.implementation.udzhas;
 import com.ss.ita.kata.Eight;
 
 public class EightImpl implements Eight {
-    public static final double litresInGallon = 4.54609188;
-    public static final double kilometresInMile = 1.609344;
 
     @Override
     public int liters(double time) {
@@ -18,7 +16,7 @@ public class EightImpl implements Eight {
 
     @Override
     public float mpgToKPM(float mpg) {
-        double res = mpg / litresInGallon * kilometresInMile;
+        double res = mpg / LITRES_IN_GALLON * KILOMETRES_IN_MILE;
         return (float) Math.round(res * 100) / 100;
 
     }
