@@ -28,11 +28,4 @@ public interface Seven {
      */
     int whereIsHe(int p, int bef, int aft);
 
-    /**
-     * Build a pile of Cubes
-     * @param m
-     * @return
-     */
-    long findNb(long m);
-
 }
