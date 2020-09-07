@@ -110,8 +110,6 @@ public class SixImpl implements Six {
             Matcher matcher = pattern.matcher(s);
             if (matcher.find()) {
                 if (matcher.group(1).equals(toFind)) {
-                    localSCore = 0;
-                    localConceded = 0;
                     localSCore = Integer.parseInt(matcher.group(2).trim());
                     localConceded = Integer.parseInt(matcher.group(4).trim());
                     if (localSCore > localConceded) {
@@ -123,8 +121,6 @@ public class SixImpl implements Six {
                     conceded += localConceded;
 
                 } else if (matcher.group(3).equals(toFind)) {
-                    localSCore = 0;
-                    localConceded = 0;
                     localSCore = Integer.parseInt(matcher.group(4).trim());
                     localConceded = Integer.parseInt(matcher.group(2).trim());
                     if (localSCore > localConceded) {
@@ -145,7 +141,23 @@ public class SixImpl implements Six {
 
     @Override
     public String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
-        return null;
+        if (lstOfArt.length == 0 || lstOf1stLetter.length == 0)  {
+            return "";
+        }
+        StringBuilder result = new StringBuilder();
+        for (String m : lstOf1stLetter) {
+            int temp = 0;
+            for (String l : lstOfArt) {
+                if (l.charAt(0) == m.charAt(0)) {
+                    temp += Integer.parseInt(l.split(" ")[1]);
+                }
+            }
+            if (result.length() > 0) {
+                result.append(" - ");
+            }
+            result.append("(").append(m).append(" : ").append(temp).append(")");
+        }
+        return result.toString();
     }
 }
 
