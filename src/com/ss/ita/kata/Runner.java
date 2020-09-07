@@ -7,6 +7,10 @@ public class Runner {
     private Five Impl5;
 
     public Runner(String whose) {
+        SetImplementation(whose);
+    }
+
+    public void SetImplementation(String whose) {
         switch (whose) {
             case "Yuriy":
                 System.out.println("Yuriy's (udzhas) implementation used.");
@@ -64,5 +68,68 @@ public class Runner {
                 this.Impl5 = new com.ss.ita.kata.implementation.udzhas.FiveImpl();
 
         }
+    }
+
+    /**
+     * Provides list of tasks in the specified kata level
+     * @param kata kyu level of kata (from 8 to 5)
+     */
+    public static String[] tasksList(int kata) {
+        switch (kata) {
+            case 8:
+                return new String[]{
+                        "Keep Hydrated!",
+                        "Volume of a cuboid",
+                        "Miles per gallon to kilometers per liter",
+                        "To square root or no to square",
+                        "Count of positives / sum of negatives",
+                        "Convert a String to a Number!",
+                        "Willson primes",
+                        "Formatting decimal places",
+                        "Find numbers which are divisible by given number"
+                };
+            case 7:
+                return new String[]{
+                        "Looking for a benefactor",
+                        "Sum of the first nth term of Series",
+                        "Where is Vasya?"
+                };
+            case 6:
+                return new String[]{
+                        "Build a pile of Cubes",
+                        "Easy balance checking",
+                        "Floating-point Approximation (I)",
+                        "Rainfall",
+                        "Ranking NBA",
+                        "Help the bookseller!"
+                };
+            case 5:
+                return new String[]{
+                        "Artificial Rain",
+                        "Gap in Primes",
+                        "Trailing zeros in factorial",
+                        "Perimeter of squares in a rectangle",
+                        "Which x for that sum?",
+                        "Find the smallest"
+                };
+            default:
+                return new String[]{};
+        }
+    }
+    /**
+     * Provides instructions on usage
+     * @return string with instructions
+     */
+    public static String docs() {
+        String doc = "The following methods are available:\n";
+        int count = 0; //The overall number of method/task
+        for (int i = 8; i >= 5; i--) {
+            doc += "\tFrom the kata of " + i + " kyu:";
+            String[] l = tasksList(i);
+            for (int j = 0; j < l.length; j++) {
+                doc += "\t\t" + ++count + ". " + l[j] + "\n";
+            }
+        }
+        return doc;
     }
 }

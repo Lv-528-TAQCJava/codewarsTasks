@@ -55,7 +55,9 @@ public class SixImplementation implements Six {
     @Override
     public double f(double x) {
         BigDecimal d = BigDecimal.ONE.add(BigDecimal.valueOf(x));
-        return d.sqrt(new MathContext(32)).subtract(BigDecimal.ONE).doubleValue();
+        //return d.sqrt(new MathContext(32)).subtract(BigDecimal.ONE).doubleValue();
+        //!NB BigDecimal.sqrt is available only in JDK 9, but we use JDK 8
+        return 0;
     }
 
     /**
