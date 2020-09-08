@@ -9,52 +9,52 @@ public interface IRunner {
     /**
      * Keep Hydrated!
      */
-    int runTask1();
+    String runTask1();
 
     /**
      * Volume of cuboid
      */
-    double runTask2();
+    String runTask2();
 
     /**
      * Miles per gallon to kilometers per liter
      */
-    float runTask3();
+    String runTask3();
 
     /**
      * To square root or no to square
      */
-    int[] runTask4();
+    String runTask4();
 
     /**
      * Count of positives / sum of negatives
      */
-    int[] runTask5();
+    String runTask5();
 
     /**
      * String to number
      */
-    int runTask6();
+    String runTask6();
 
     /**
      * Wilson primes
      */
-    boolean runTask7();
+    String runTask7();
 
     /**
      * Formatting decimal places
      */
-    double runTask8();
+    String runTask8();
 
     /**
      * Find numbers which are divisible by given number
      */
-    int[] runTask9();
+    String runTask9();
 
     /**
      * Looking for a benefactor
      */
-    long runTask10();
+    String runTask10();
 
     /**
      * Sum of the first nth term of Series
@@ -64,12 +64,12 @@ public interface IRunner {
     /**
      * Where is Vasia?
      */
-    int runTask12();
+    String runTask12();
 
     /**
      * Build a pile of Cubes
      */
-    long runTask13();
+    String runTask13();
 
     /**
      * Easy Balance Checking
@@ -79,12 +79,12 @@ public interface IRunner {
     /**
      * Floating-point Approximation
      */
-    double runTask15();
+    String runTask15();
 
     /**
      * Rainfall
      */
-    double[] runTask16(); //Return mean() and variance() - that is why double[]
+    String runTask16(); //mind there are two methods: mean() and variance()
 
     /**
      * Ranking NBA teams
@@ -99,31 +99,31 @@ public interface IRunner {
     /**
      * Artificial Rain
      */
-    int runTask19();
+    String runTask19();
 
     /**
      * Gap in Primes
      */
-    long[] runTask20();
+    String runTask20();
 
     /**
      * Number of trailing zeros of N!
      */
-    int runTask21();
+    String runTask21();
 
     /**
      * Perimeter of squares in a rectangle
      */
-    BigInteger runTask22();
+    String runTask22();
 
     /**
      * Which x for that sum
      */
-    double runTask23();
+    String runTask23();
 
     /**
      * Find the smallest
      */
-    long[] runTask24();
+    String runTask24();
 
 }
