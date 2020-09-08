@@ -1,4 +1,4 @@
-package com.ss.ita.kata;
+package com.ss.ita.kata.util;
 
 public enum Authors {
     YURIY {
