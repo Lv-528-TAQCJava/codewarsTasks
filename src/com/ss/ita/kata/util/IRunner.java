@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 public interface IRunner {
 
-    void SetImplementation(String whose);
+    void setImplementation(String whose);
 
     /**
      * Keep Hydrated!
