@@ -1,6 +1,5 @@
-package com.ss.ita.kata.util;
+package com.ss.ita.util;
 
-import java.io.IOException;
 import java.math.BigInteger;
 
 /**
@@ -12,53 +11,53 @@ public interface Scanner {
      * Reads integer from input source
      * @return int value
      */
-    int getInt() throws IOException;
+    int readInt();
 
     /**
      * Reads long from input source
      * @return long value
      */
-    long getLong() throws IOException;
+    long readLong();
 
     /**
      * Reads integer array from input source
      * @return array of integers
      */
-    int[] getIntArray() throws IOException;
+    int[] readIntArray();
 
     /**
      * Reads float from input source
      * @return float value
      */
-    float getFloat() throws IOException;
+    float readFloat();
 
     /**
      * Reads double from input source
      * @return double value
      */
-    double getDouble() throws IOException;
+    double readDouble();
 
     /**
      * Reads double array from input source
      * @return array of doubles
      */
-    double[] getDoubleArray() throws IOException;
+    double[] readDoubleArray();
 
     /**
      * Reads string from input source
      * @return string
      */
-    String getString() throws IOException;
+    String readString();
 
     /**
      * Reads string array from input source
      * @return array of strings
      */
-    String[] getStringArray() throws IOException;
+    String[] readStringArray();
 
     /**
      * Reads big integer from input source
      * @return big integer value
      */
-    BigInteger getBigInt() throws IOException;
+    BigInteger readBigInt();
 }
