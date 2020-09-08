@@ -1,12 +1,12 @@
 package com.ss.ita.kata;
 
-public class Runner {
+public class RunnerOld {
     private Eight Impl8;
     private Seven Impl7;
     private Six Impl6;
     private Five Impl5;
 
-    public Runner(String whose) {
+    public RunnerOld(String whose) {
         SetImplementation(whose);
     }
 
