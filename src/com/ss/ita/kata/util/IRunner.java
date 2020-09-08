@@ -1,7 +1,5 @@
 package com.ss.ita.kata.util;
 
-import java.math.BigInteger;
-
 public interface IRunner {
 
     void setImplementation(String whose);
