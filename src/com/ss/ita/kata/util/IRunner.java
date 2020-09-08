@@ -1,8 +1,10 @@
 package com.ss.ita.kata.util;
 
+import com.ss.ita.kata.enums.UserNames;
+
 public interface IRunner {
 
-    void setImplementation(String whose);
+    void setImplementation(UserNames whose);
 
     /**
      * Keep Hydrated!
