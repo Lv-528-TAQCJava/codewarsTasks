@@ -1,5 +1,5 @@
-package com.ss.ita.kata.util;
-import com.ss.ita.kata.enums.UserNames;
+package com.ss.ita.util;
+import com.ss.ita.enums.UserNames;
 
 public class Menu {
     /**

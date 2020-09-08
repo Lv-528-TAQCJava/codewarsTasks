@@ -1,4 +1,4 @@
-package com.ss.ita.kata.util;
+package com.ss.ita.util;
 
 import java.math.BigInteger;
 

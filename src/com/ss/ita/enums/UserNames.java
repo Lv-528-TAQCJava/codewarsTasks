@@ -1,4 +1,4 @@
-package com.ss.ita.kata.enums;
+package com.ss.ita.enums;
 
 public enum UserNames {
     YURIY("Yuriy"),
