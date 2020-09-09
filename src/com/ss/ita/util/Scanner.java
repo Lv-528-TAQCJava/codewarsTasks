@@ -11,53 +11,53 @@ public interface Scanner {
      * Reads integer from input source
      * @return int value
      */
-    int getInt();
+    int readInt();
 
     /**
      * Reads long from input source
      * @return long value
      */
-    long getLong();
+    long readLong();
 
     /**
      * Reads integer array from input source
      * @return array of integers
      */
-    int[] getIntArray();
+    int[] readIntArray();
 
     /**
      * Reads float from input source
      * @return float value
      */
-    float getFloat();
+    float readFloat();
 
     /**
      * Reads double from input source
      * @return double value
      */
-    double getDouble();
+    double readDouble();
 
     /**
      * Reads double array from input source
      * @return array of doubles
      */
-    double[] getDoubleArr();
+    double[] readDoubleArray();
 
     /**
      * Reads string from input source
      * @return string
      */
-    String getString();
+    String readString();
 
     /**
      * Reads string array from input source
      * @return array of strings
      */
-    String[] getStringArray();
+    String[] readStringArray();
 
     /**
      * Reads big integer from input source
      * @return big integer value
      */
-    BigInteger getBigInt();
+    BigInteger readBigInt();
 }

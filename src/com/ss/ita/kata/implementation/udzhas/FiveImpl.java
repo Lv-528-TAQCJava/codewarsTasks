@@ -43,7 +43,7 @@ public class FiveImpl implements Five {
         return result;
     }
     private static boolean isPrime(long n){
-        for(var i=2; i < n; i++){
+        for(int i=2; i < n; i++){
             if(n%i == 0){
                 return false;
             }

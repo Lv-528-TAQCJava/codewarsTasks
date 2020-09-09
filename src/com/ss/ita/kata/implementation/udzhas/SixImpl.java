@@ -105,12 +105,12 @@ public class SixImpl implements Six {
         }
 
         int wins = 0, losses = 0, draws = 0, scored = 0, conceded = 0;
-        for (var match : of(resultSheet.split(",")).filter(s -> s.contains(toFind)).toArray(String[]::new)) {
+        for (String match : of(resultSheet.split(",")).filter(s -> s.contains(toFind)).toArray(String[]::new)) {
             if (match.contains(".")) {
                 return "Error(float number):" + match;
             }
 
-            var teams = match.substring(0, match.lastIndexOf(' ')).replaceAll(" \\d+ ", "@").split("@");
+            String[] teams = match.substring(0, match.lastIndexOf(' ')).replaceAll(" \\d+ ", "@").split("@");
             if (teams[0].equals(toFind) || teams[1].equals(toFind)) {
 
                 int pointsA = Integer.parseInt(match.substring(match.lastIndexOf(' ') + 1));
