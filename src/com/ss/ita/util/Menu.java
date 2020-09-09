@@ -64,8 +64,6 @@ public class Menu {
 
     /**
      * Provides instructions on usage
-     *
-     * @return string with instructions
      */
     private static void printTasks() {
         StringBuilder tasksOutput = new StringBuilder();
@@ -209,8 +207,8 @@ public class Menu {
         do {
             printUserNames();
             int id = scanner.readInt();
-            user = UserNames.getById(id);
-        } while (user.equals(null));
+            user = UserNames.getById((long) id);
+        } while (user==null);
 
         runner.setImplementation(user);
     }

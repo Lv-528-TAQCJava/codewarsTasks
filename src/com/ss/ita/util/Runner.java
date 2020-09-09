@@ -86,7 +86,7 @@ public class Runner implements IRunner {
      * @param type the type of the parameter (integer, float, etc.)
      */
     private void printTaskPrompt(String name, String param, String type) {
-        System.out.println("Running \"" + name + "\". Please enter parameter \"" + param + "\" (" + type + ")");
+        System.out.print("Running \"" + name + "\". Please enter parameter \"" + param + "\" (" + type + "): ");
     }
 
     /**

@@ -34,7 +34,7 @@ public enum UserNames {
         return nick;
     }
 
-    public static UserNames getById(int id) {
+    public static UserNames getById(Long id) {
         for(UserNames user : values()) {
             if(user.id.equals(id))
                 return user;
