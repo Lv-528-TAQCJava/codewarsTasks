@@ -1,6 +1,6 @@
-package com.ss.ita.kata.util;
+package com.ss.ita.util;
 
-import com.ss.ita.kata.enums.UserNames;
+import com.ss.ita.enums.UserNames;
 
 public interface IRunner {
 
