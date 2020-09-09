@@ -83,7 +83,7 @@ public class Menu {
         StringBuilder userNamesOutput = new StringBuilder();
         userNamesOutput.append("The following user names are available:\r\n");
         for (UserNames name : UserNames.values()) {
-            userNamesOutput.append(name.getId() + " " + name.getName() + " (" + name.getNick() + ")\r\n");
+            userNamesOutput.append(name.getId() + ". " + name.getName() + " (" + name.getNick() + ")\r\n");
         }
         System.out.println(userNamesOutput.toString());
     }
