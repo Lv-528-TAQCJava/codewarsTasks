@@ -85,7 +85,7 @@ public class Menu {
         StringBuilder userNamesOutput = new StringBuilder();
         userNamesOutput.append("The following user names are available:\r\n");
         for (UserNames name : UserNames.values()) {
-            userNamesOutput.append(name.getId() + " " + name.getName() + " (" + name.getNick()  + ")\r\n");
+            userNamesOutput.append(name.getId() + " " + name.getName() + " (" + name.getNick() + ")\r\n");
         }
         System.out.println(userNamesOutput.toString());
     }
@@ -100,19 +100,45 @@ public class Menu {
 
         try {
             switch (id) {
-                case 1: runner.runTask1(); break;
-                case 2: runner.runTask2(); break;
-                case 3: runner.runTask3(); break;
-                case 4: runner.runTask4(); break;
-                case 5: runner.runTask5(); break;
-                case 6: runner.runTask6(); break;
-                case 7: runner.runTask7(); break;
-                case 8: runner.runTask8(); break;
-                case 9: runner.runTask9(); break;
-                case 10: runner.runTask10(); break;
-                case 11: runner.runTask11(); break;
-                case 12: runner.runTask12(); break;
-                case 13: runner.runTask13(); break;
+                case 1:
+                    runner.runTask1();
+                    break;
+                case 2:
+                    runner.runTask2();
+                    break;
+                case 3:
+                    runner.runTask3();
+                    break;
+                case 4:
+                    runner.runTask4();
+                    break;
+                case 5:
+                    runner.runTask5();
+                    break;
+                case 6:
+                    runner.runTask6();
+                    break;
+                case 7:
+                    runner.runTask7();
+                    break;
+                case 8:
+                    runner.runTask8();
+                    break;
+                case 9:
+                    runner.runTask9();
+                    break;
+                case 10:
+                    runner.runTask10();
+                    break;
+                case 11:
+                    runner.runTask11();
+                    break;
+                case 12:
+                    runner.runTask12();
+                    break;
+                case 13:
+                    runner.runTask13();
+                    break;
                 case 14:
                     runner.runTask14();
                     break;
