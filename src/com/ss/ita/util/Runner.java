@@ -1,7 +1,11 @@
-package com.ss.ita.kata.util;
+package com.ss.ita.util;
 
-import com.ss.ita.kata.*;
-import  com.ss.ita.kata.enums.*;
+import com.ss.ita.enums.UserNames;
+import com.ss.ita.enums.UserNicks;
+import com.ss.ita.kata.Eight;
+import com.ss.ita.kata.Five;
+import com.ss.ita.kata.Seven;
+import com.ss.ita.kata.Six;
 
 public class Runner implements IRunner {
     private Eight Impl8;
@@ -67,7 +71,7 @@ public class Runner implements IRunner {
             default:
                 throw new IllegalArgumentException("There is no such author: " + whose);
         }
-        System.out.println(whose.getName()+"'s (" + UserNicks.values()[whose.ordinal()].getName() + ") implementation used.");
+        System.out.println(whose.getName() + "'s (" + UserNicks.values()[whose.ordinal()].getName() + ") implementation used.");
     }
 
     /**
