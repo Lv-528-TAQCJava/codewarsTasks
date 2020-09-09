@@ -17,6 +17,8 @@ public class Runner implements IRunner {
         setImplementation(whose);
     }
 
+    public Runner() { }
+
     @Override
     public void setImplementation(UserNames whose) {
         switch (whose) {
@@ -79,7 +81,7 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask1() {
-        return null;
+        return  String.valueOf(Impl8.liters(8));
     }
 
     /**
