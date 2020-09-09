@@ -6,17 +6,21 @@ import com.ss.ita.kata.Five;
 import com.ss.ita.kata.Seven;
 import com.ss.ita.kata.Six;
 
+import java.util.Arrays;
+
 public class Runner implements IRunner {
     private Eight Impl8;
     private Seven Impl7;
     private Six Impl6;
     private Five Impl5;
+    private Scanner scan;
 
     public Runner(UserNames whose) {
+        scan = new ConsoleScanner();
         setImplementation(whose);
     }
 
-    public Runner() { }
+    public Runner() { scan = new ConsoleScanner(); }
 
     @Override
     public void setImplementation(UserNames whose) {
@@ -76,11 +80,25 @@ public class Runner implements IRunner {
     }
 
     /**
+     * Prints prompt before running a task
+     * @param name the name of the task
+     * @param param the name of parameter for the task (call many times in case many parameters needed)
+     * @param type the type of the parameter (integer, float, etc.)
+     */
+    private void printTaskPrompt(String name, String param, String type) {
+        System.out.println("Running \"" + name + "\". Please enter parameter \"" + param + "\" (" + type + ")");
+    }
+
+    /**
      * Keep Hydrated!
      */
     @Override
     public String runTask1() {
-        return  String.valueOf(Impl8.liters(8));
+        printTaskPrompt("Keep Hydrated!", "liters", "double");
+        double input = scan.readDouble();
+        String res = String.valueOf(Impl8.liters(input));
+        System.out.println(res);
+        return res; //in case the result is not only to be printed
     }
 
     /**
@@ -88,7 +106,16 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask2() {
-        return null;
+        printTaskPrompt("Volume of cuboid", "length", "double");
+        double input1 = scan.readDouble();
+        printTaskPrompt("Volume of cuboid", "width", "double");
+        double input2 = scan.readDouble();
+        printTaskPrompt("Volume of cuboid", "height", "double");
+        double input3 = scan.readDouble();
+
+        String res = String.valueOf(Impl8.getVolumeOfCuboid(input1, input2, input3));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -96,7 +123,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask3() {
-        return null;
+        printTaskPrompt("Miles per gallon to kilometers per liter", "miles per gallon", "float");
+        float input = scan.readFloat();
+        String res = String.valueOf(Impl8.mpgToKPM(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -104,7 +135,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask4() {
-        return null;
+        printTaskPrompt("To square root or no to square", "array", "int[]");
+        int[] input = scan.readIntArray();
+        String res = Arrays.toString(Impl8.squareOrSquareRoot(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -112,7 +147,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask5() {
-        return null;
+        printTaskPrompt("Count of positives / sum of negatives", "array", "int[]");
+        int[] input = scan.readIntArray();
+        String res = Arrays.toString(Impl8.countPositivesSumNegatives(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -120,7 +159,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask6() {
-        return null;
+        printTaskPrompt("String to number", "str", "String");
+        String input = scan.readString();
+        String res = String.valueOf(Impl8.stringToNumber(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -128,7 +171,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask7() {
-        return null;
+        printTaskPrompt("Wilson primes", "n", "double");
+        double input = scan.readDouble();
+        String res = String.valueOf(Impl8.amIWilson(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -136,7 +183,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask8() {
-        return null;
+        printTaskPrompt("Formatting decimal places", "number", "double");
+        double input = scan.readDouble();
+        String res = String.valueOf(Impl8.twoDecimalPlaces(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
