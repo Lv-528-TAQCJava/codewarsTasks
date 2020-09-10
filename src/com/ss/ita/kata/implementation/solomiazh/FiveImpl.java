@@ -66,6 +66,59 @@ public class FiveImpl implements Five {
         return null;
     }
 
+    @Override
+    public int zeros(int n) {
+        int count = 0;
+        for (int i = 5; n / i >= 1; i *= 5)
+            count += n / i;
+        return count;
+    }
+
+    @Override
+    public BigInteger perimeter(BigInteger n) {
+
+        BigInteger a = BigInteger.ONE;
+        BigInteger b = BigInteger.ONE;
+        BigInteger sum = BigInteger.ONE;
+        BigInteger i = BigInteger.ZERO;
+        for (; !i.equals(n); i = i.add(BigInteger.ONE)) {
+
+            b = b.add(a);
+            a = b.subtract(a);
+            sum = sum.add(a);
+        }
+        return sum = sum.multiply(BigInteger.valueOf(4));
+    }
+
+    @Override
+    public double solveSum(double m) {
+
+        return 1 + 1.0 / (2 * m) - Math.sqrt(4 * m + 1) / (2 * m);
+
+    }
+
+    @Override
+    public long[] smallest(long n) {
+
+        long[] result = {n, 0, 0};
+        String digits = Long.toString(n);
+
+        for (int i = 0; i < digits.length(); i++) {
+            String digit = digits.substring(i, i + 1);
+            String removed = digits.substring(0, i) + digits.substring(i + 1);
+
+            for (int j = 0; j < digits.length(); j++) {
+                String inserted = removed.substring(0, j) + digit + removed.substring(j);
+                if (result[0] > Long.parseLong(inserted)) {
+                    result[0] = Long.parseLong(inserted);
+                    result[1] = i;
+                    result[2] = j;
+                }
+            }
+        }
+        return result;
+    }
+
     public static class Eratosfen {
         public boolean[] primes;
 
@@ -86,39 +139,5 @@ public class FiveImpl implements Five {
             }
         }
     }
+}
 
-    @Override
-    public int zeros(int n) {
-        int count = 0;
-        for (int i = 5; n / i >= 1; i *= 5)
-            count += n / i;
-        return count;
-    }
-
-    @Override
-    public BigInteger perimeter(BigInteger n) {
-
-            BigInteger a = BigInteger.ONE;
-            BigInteger b = BigInteger.ONE;
-            BigInteger sum = BigInteger.ONE;
-            BigInteger i = BigInteger.ZERO;
-            for (; !i.equals(n); i = i.add(BigInteger.ONE)) {
-
-                b = b.add(a);
-                a = b.subtract(a);
-                sum = sum.add(a);
-            }
-            return sum = sum.multiply(BigInteger.valueOf(4));
-        }
-
-
-        @Override
-        public double solveSum ( double m){
-            return 0;
-        }
-
-        @Override
-        public long[] smallest ( long n){
-            return new long[0];
-        }
-    }
