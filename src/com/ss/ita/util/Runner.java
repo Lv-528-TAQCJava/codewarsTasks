@@ -161,8 +161,17 @@ public class Runner implements IRunner {
     @Override
     public String runTask6() {
         printTaskPrompt("String to number", "str", "String");
-        String input = scan.readString();
-        String res = String.valueOf(Impl8.stringToNumber(input));
+        String input;
+        String res;
+        while (true) {
+            input = scan.readString();
+            try {
+                res = String.valueOf(Impl8.stringToNumber(input));
+                break;
+            } catch (NumberFormatException exception) {
+                System.out.println("Input again");
+            }
+        }
         System.out.println(res);
         return res;
     }

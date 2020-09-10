@@ -10,7 +10,7 @@ public class ConsoleScanner implements Scanner {
     public int readInt() {
         while(true) {
             if (scanner.hasNextInt()) {
-                return scanner.nextInt();
+                return  Integer.parseInt(scanner.nextLine());
             } else {
                 scanner.next();
                 System.out.println("Incorrect format(int). Try again...");
@@ -22,7 +22,7 @@ public class ConsoleScanner implements Scanner {
     public long readLong() {
         while (true) {
             if (scanner.hasNextLong()) {
-                return scanner.nextLong();
+                return Long.parseLong(scanner.nextLine());
             } else {
                 scanner.next();
                 System.out.println("Incorrect format(long). Try again...");
@@ -60,7 +60,7 @@ public class ConsoleScanner implements Scanner {
     public float readFloat() {
         while(true) {
             if (scanner.hasNextFloat()) {
-                return scanner.nextFloat();
+                return Float.parseFloat(scanner.nextLine());
             } else {
                 scanner.next();
                 System.out.println("Incorrect format(float). Try again...");
@@ -72,7 +72,7 @@ public class ConsoleScanner implements Scanner {
     public double readDouble() {
         while(true) {
             if (scanner.hasNextDouble()) {
-                return scanner.nextDouble();
+                return  Double.parseDouble(scanner.nextLine());
             } else {
                 scanner.next();
                 System.out.println("Incorrect format(double). Try again...");
@@ -137,7 +137,7 @@ public class ConsoleScanner implements Scanner {
     public BigInteger readBigInt() {
         while (true) {
             if (scanner.hasNextBigInteger()) {
-                return scanner.nextBigInteger();
+                return new BigInteger(scanner.nextLine());
             } else {
                 scanner.next();
                 System.out.println("Incorrect format(big integer). Try again...");
