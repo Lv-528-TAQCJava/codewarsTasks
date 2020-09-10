@@ -137,7 +137,7 @@ public class ConsoleScanner implements Scanner {
     public BigInteger readBigInt() {
         while (true) {
             if (scanner.hasNextBigInteger()) {
-                return new BigInteger(scanner.nextLine())
+                return new BigInteger(scanner.nextLine());
             } else {
                 scanner.next();
                 System.out.println("Incorrect format(big integer). Try again...");
