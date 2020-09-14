@@ -1,21 +1,27 @@
 package com.ss.ita.util;
 
 import com.ss.ita.enums.UserNames;
-import com.ss.ita.enums.UserNicks;
 import com.ss.ita.kata.Eight;
 import com.ss.ita.kata.Five;
 import com.ss.ita.kata.Seven;
 import com.ss.ita.kata.Six;
+
+import java.math.BigInteger;
+import java.util.Arrays;
 
 public class Runner implements IRunner {
     private Eight Impl8;
     private Seven Impl7;
     private Six Impl6;
     private Five Impl5;
+    private Scanner scan;
 
     public Runner(UserNames whose) {
+        scan = new ConsoleScanner();
         setImplementation(whose);
     }
+
+    public Runner() { scan = new ConsoleScanner(); }
 
     @Override
     public void setImplementation(UserNames whose) {
@@ -71,7 +77,17 @@ public class Runner implements IRunner {
             default:
                 throw new IllegalArgumentException("There is no such author: " + whose);
         }
-        System.out.println(whose.getName() + "'s (" + UserNicks.values()[whose.ordinal()].getName() + ") implementation used.");
+        System.out.println(whose.getName() + "'s (" + whose.getNick() + ") implementation used.");
+    }
+
+    /**
+     * Prints prompt before running a task
+     * @param name the name of the task
+     * @param param the name of parameter for the task (call many times in case many parameters needed)
+     * @param type the type of the parameter (integer, float, etc.)
+     */
+    private void printTaskPrompt(String name, String param, String type) {
+        System.out.print("Running \"" + name + "\". Please enter parameter \"" + param + "\" (" + type + "): ");
     }
 
     /**
@@ -79,7 +95,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask1() {
-        return null;
+        printTaskPrompt("Keep Hydrated!", "liters", "double");
+        double input = scan.readDouble();
+        String res = String.valueOf(Impl8.liters(input));
+        System.out.println(res);
+        return res; //in case the result is not only to be printed
     }
 
     /**
@@ -87,7 +107,16 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask2() {
-        return null;
+        printTaskPrompt("Volume of cuboid", "length", "double");
+        double input1 = scan.readDouble();
+        printTaskPrompt("Volume of cuboid", "width", "double");
+        double input2 = scan.readDouble();
+        printTaskPrompt("Volume of cuboid", "height", "double");
+        double input3 = scan.readDouble();
+
+        String res = String.valueOf(Impl8.getVolumeOfCuboid(input1, input2, input3));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -95,7 +124,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask3() {
-        return null;
+        printTaskPrompt("Miles per gallon to kilometers per liter", "miles per gallon", "float");
+        float input = scan.readFloat();
+        String res = String.valueOf(Impl8.mpgToKPM(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -103,7 +136,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask4() {
-        return null;
+        printTaskPrompt("To square root or no to square", "array", "int[]");
+        int[] input = scan.readIntArray();
+        String res = Arrays.toString(Impl8.squareOrSquareRoot(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -111,7 +148,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask5() {
-        return null;
+        printTaskPrompt("Count of positives / sum of negatives", "array", "int[]");
+        int[] input = scan.readIntArray();
+        String res = Arrays.toString(Impl8.countPositivesSumNegatives(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -119,7 +160,20 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask6() {
-        return null;
+        printTaskPrompt("String to number", "str", "String");
+        String input;
+        String res;
+        while (true) {
+            input = scan.readString();
+            try {
+                res = String.valueOf(Impl8.stringToNumber(input));
+                break;
+            } catch (NumberFormatException exception) {
+                System.out.println("Input again");
+            }
+        }
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -127,7 +181,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask7() {
-        return null;
+        printTaskPrompt("Wilson primes", "n", "double");
+        double input = scan.readDouble();
+        String res = String.valueOf(Impl8.amIWilson(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -135,7 +193,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask8() {
-        return null;
+        printTaskPrompt("Formatting decimal places", "number", "double");
+        double input = scan.readDouble();
+        String res = String.valueOf(Impl8.twoDecimalPlaces(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -143,7 +205,13 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask9() {
-        return null;
+        printTaskPrompt("Find numbers which are divisible by given number", "numbers", "int[]");
+        int[] input1 = scan.readIntArray();
+        printTaskPrompt("Find numbers which are divisible by given number", "divider", "int");
+        int input2 = scan.readInt();
+        String res = Arrays.toString(Impl8.divisibleBy(input1, input2));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -151,7 +219,13 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask10() {
-        return null;
+        printTaskPrompt("Looking for a benefactor", "array", "double[]");
+        double[] input1 = scan.readDoubleArray();
+        printTaskPrompt("Looking for a benefactor", "new average", "double");
+        double input2 = scan.readDouble();
+        String res = String.valueOf(Impl7.newAvg(input1, input2));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -159,7 +233,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask11() {
-        return null;
+        printTaskPrompt("Sum of the first nth term of Series", "n", "integer");
+        int input = scan.readInt();
+        String res = String.valueOf(Impl7.seriesSum(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -167,7 +245,15 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask12() {
-        return null;
+        printTaskPrompt("Where is Vasia?", "position", "integer");
+        int input1 = scan.readInt();
+        printTaskPrompt("Where is Vasia?", "before", "integer");
+        int input2 = scan.readInt();
+        printTaskPrompt("Where is Vasia?", "after", "integer");
+        int input3 = scan.readInt();
+        String res = String.valueOf(Impl7.whereIsHe(input1, input2, input3));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -175,7 +261,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask13() {
-        return null;
+        printTaskPrompt("Build a pile of Cubes", "m", "long");
+        long input = scan.readLong();
+        String res = String.valueOf(Impl6.findNb(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -183,7 +273,14 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask14() {
-        return null;
+        printTaskPrompt("Easy Balance Checking", "book", "String");
+        System.out.println("Format:\n 1000.00\\n" +
+                "125 Market 125.45\\n" +
+                "126 Hardware 34.95");
+        String input = scan.readString();
+        String res = String.valueOf(Impl6.balance(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -191,7 +288,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask15() {
-        return null;
+        printTaskPrompt("Floating-point Approximation", "x", "double");
+        double input = scan.readDouble();
+        String res = String.valueOf(Impl6.f(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -199,7 +300,17 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask16() {
-        return null;
+        printTaskPrompt("Rainfall", "town", "String");
+        String input1 = scan.readString();
+        printTaskPrompt("Rainfall", "stats", "String");
+        System.out.println("Format:\n" +
+                "Rome:Jan 81.2,Feb 63.2,Mar 70.3,Apr 55.7,May 53.0,Jun 36.4,Jul 17.5,Aug 27.5,Sep 60.9,Oct 117.7,Nov 111.0,Dec 97.9");
+        String input2 = scan.readString();
+
+        String res1 = String.valueOf(Impl6.mean(input1, input2));
+        String res2 = String.valueOf(Impl6.variance(input1, input2));
+        System.out.println("mean: " + res1 + "; variance: " + res2);
+        return res1 + " " + res2;
     }
 
     /**
@@ -207,7 +318,15 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask17() {
-        return null;
+        printTaskPrompt("Ranking NBA teams", "result sheet", "String");
+        System.out.println("Format:\n" +
+                "Los Angeles Clippers 104 Dallas Mavericks 88,New York Knicks 101 Atlanta Hawks 112,Indiana Pacers 103 Memphis Grizzlies 112");
+        String input1 = scan.readString();
+        printTaskPrompt("Ranking NBA teams", "to find", "String");
+        String input2 = scan.readString();
+        String res = String.valueOf(Impl6.nbaCup(input1, input2));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -215,7 +334,14 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask18() {
-        return null;
+        printTaskPrompt("Help the bookseller", "list of articles", "String[]");
+        System.out.println("Format:\nABAR 200");
+        String[] input1 = scan.readStringArray();
+        printTaskPrompt("Help the bookseller", "list of 1st letter", "String[]");
+        String[] input2 = scan.readStringArray();
+        String res = String.valueOf(Impl6.stockSummary(input1, input2));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -223,7 +349,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask19() {
-        return null;
+        printTaskPrompt("Artificial Rain", "array", "int[]");
+        int[] input = scan.readIntArray();
+        String res = String.valueOf(Impl5.artificialRain(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -231,7 +361,15 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask20() {
-        return null;
+        printTaskPrompt("Gap in Primes", "gap", "int");
+        int input1 = scan.readInt();
+        printTaskPrompt("Gap in Primes", "m", "long");
+        long input2 = scan.readLong();
+        printTaskPrompt("Gap in Primes", "n", "long");
+        long input3 = scan.readLong();
+        String res = Arrays.toString(Impl5.gap(input1, input2, input3));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -239,7 +377,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask21() {
-        return null;
+        printTaskPrompt("Number of trailing zeros of N!", "n", "integer");
+        int input = scan.readInt();
+        String res = String.valueOf(Impl5.zeros(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -247,7 +389,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask22() {
-        return null;
+        printTaskPrompt("Perimeter of squares in a rectangle", "n", "BigInteger");
+        BigInteger input = scan.readBigInt();
+        String res = String.valueOf(Impl5.perimeter(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -255,7 +401,11 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask23() {
-        return null;
+        printTaskPrompt("Which x for that sum", "m", "double");
+        double input = scan.readDouble();
+        String res = String.valueOf(Impl5.solveSum(input));
+        System.out.println(res);
+        return res;
     }
 
     /**
@@ -263,6 +413,10 @@ public class Runner implements IRunner {
      */
     @Override
     public String runTask24() {
-        return null;
+        printTaskPrompt("Find the smallest", "n", "long");
+        long input = scan.readLong();
+        String res = Arrays.toString(Impl5.smallest(input));
+        System.out.println(res);
+        return res;
     }
 }
