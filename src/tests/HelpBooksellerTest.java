@@ -1,7 +1,7 @@
 package tests;
 
 import com.ss.ita.kata.Six;
-import com.ss.ita.kata.implementation.rsavu98.SixImpl;
+import com.ss.ita.kata.implementation.solomiazh.SixImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
