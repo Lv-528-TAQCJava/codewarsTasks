@@ -2,9 +2,10 @@ package tests;
 
 import com.ss.ita.kata.Eight;
 import com.ss.ita.kata.implementation.udzhas.EightImpl;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-
+import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
 
@@ -22,18 +23,16 @@ public class DivisibleByTest {
         this.expected=expected;
     }
 
-    /**
-     *
-     *
-     *
-     * @Parameterized.Parameters(name = "{index} : divisibleBy({0}) == {1}")
-     * public static Iterable<Object[]> data(){
-     *     return Arrays.asList(new Object[][]{
-     *                     {(new int[]{1, 2, 3, 4, 5, 6}),{2, 4, 6}}
-     *             }
-     *
-     *     );
-     * }
-     */
 
+    @Parameterized.Parameters()
+    public static Iterable<Object[]> data(){
+        return Arrays.asList(new Object[][] {
+                        {new int[]{1, 2, 3, 4, 5, 6}, 2, new int[]{2, 4, 6}}
+                }
+        );
+    }
+    @Test
+    public void divisibleBy() {
+        assertEquals("Find numbers which are divisible by given number test",expected,Impl8.divisibleBy(nums,div));
+    }
 }
