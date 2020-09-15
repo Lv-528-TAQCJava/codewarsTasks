@@ -5,6 +5,8 @@ import com.ss.ita.kata.implementation.udzhas.EightImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import java.util.Arrays;
 
@@ -33,6 +35,6 @@ public class DivisibleByTest {
     }
     @Test
     public void divisibleBy() {
-        assertEquals("Find numbers which are divisible by given number test",expected,Impl8.divisibleBy(nums,div));
+        assertArrayEquals("Find numbers which are divisible by given number test",expected,Impl8.divisibleBy(nums,div));
     }
 }

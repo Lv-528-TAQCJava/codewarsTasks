@@ -28,31 +28,25 @@ public class NBATest {
             "            + \"Los Angeles Clippers 130 Golden State Warriors 95,Utah Jazz 102 Oklahoma City Thunder 113,San Antonio Spurs 84 Phoenix Suns 104,\"  \n" +
             "            + \"Chicago Bulls 103 Indiana Pacers 94,Milwaukee Bucks 106 Minnesota Timberwolves 88,Los Angeles Lakers 104 Portland Trail Blazers 102,\"  \n" +
             "            + \"Houston Rockets 120 New Orleans Pelicans 100,Boston Celtics 111 Brooklyn Nets 105,Charlotte Hornets 94 Chicago Bulls 86,Cleveland Cavaliers 103 Dallas Mavericks 97";
-    private static String teams= "Los Angeles Clippers,Dallas Mavericks,New York Knicks,NYK,Atlanta Hawks,Indiana Pacers,Memphis Grizzlies,\"\n" +
-            "            + \"Los Angeles Lakers,Minnesota Timberwolves,Phoenix Suns,Portland Trail Blazers,New Orleans Pelicans,\"\n" +
-            "            + \"Sacramento Kings,Los Angeles Clippers,Houston Rockets,Denver Nuggets,Cleveland Cavaliers,Milwaukee Bucks,\"\n" +
-            "            + \"Oklahoma City Thunder,San Antonio Spurs,Boston Celtics,Philadelphia 76ers,Brooklyn Nets,Chicago Bulls,\"\n" +
-            "            + \"Detroit Pistons,Utah Jazz,Miami Heat,Charlotte Hornets,Toronto Raptors,Orlando Magic,Washington Wizards,\"\n" +
-            "            + \"Golden State Warriors,Dallas Maver";
+    private String team;
 
     private final String expected;
 
-    public NBATest( String input, String teams, String expected) {
-        this.input = input;
-        this.teams = teams;
+    public NBATest( String team, String expected) {
+        this.team = team;
         this.expected = expected;
     }
 
     @Parameterized.Parameters()
     public static Iterable<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {input,
+                {
                 "Boston Celtics",
                 "Boston Celtics:W=4;D=0;L=0;Scored=403;Conceded=350;Points=12"}
         });
     }
     @Test
     public void nbaTest() {
-        assertEquals("NBA Ranking test", expected,Impl6.nbaCup(input,teams));
+        assertEquals("NBA Ranking test", expected,Impl6.nbaCup(input,team));
     }
 }
