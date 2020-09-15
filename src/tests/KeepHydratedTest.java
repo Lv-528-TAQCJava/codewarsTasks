@@ -12,15 +12,15 @@ import java.util.Arrays;
 public class KeepHydratedTest {
 
     private final Eight Impl8 = new EightImpl();
-    private final double value;
+    private final double liters;
     private final double expected;
 
-    public KeepHydratedTest(double value, double expected) {
-        this.value=value;
+    public KeepHydratedTest(double liters, double expected) {
+        this.liters=liters;
         this.expected=expected;
     }
 
-    @Parameterized.Parameters(name= "{index}: liters({0}) == {1}")
+    @Parameterized.Parameters(name = "{index}: liters({0}) == {1}")
     public static Iterable<Object[]> data() {
         return Arrays.asList(new Object[][]{
                         {3, 1},
@@ -31,6 +31,6 @@ public class KeepHydratedTest {
     }
     @Test
     public void keepHydratedTest() {
-        assertEquals("Keep Hydrated Test",expected,Impl8.liters(value), 0.0001);
+        assertEquals("Keep Hydrated Test",expected,Impl8.liters(liters), 0.0001);
     }
 }
