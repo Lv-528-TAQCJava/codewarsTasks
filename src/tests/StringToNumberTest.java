@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
+import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,7 +23,7 @@ public class StringToNumberTest {
     }
 
     @Parameterized.Parameters(name = "{index}: stringToNumber({0}) == {1}")
-    public static Iterable<Object[]> data() {
+    public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                         {"-18", -18},
                         {"2560", 2560},
