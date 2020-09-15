@@ -9,7 +9,7 @@ public class SixImpl implements Six {
     public long findNb(long m) {
         long n;
         for(n = 1; m > 0; n++) {
-            m =- (long)Math.pow(n,3);
+            m -= (long)Math.pow(n,3);
         }
         if(m == 0) return n-1;
         else return -1;

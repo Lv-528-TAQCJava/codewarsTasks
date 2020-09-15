@@ -41,7 +41,7 @@ public class EightImpl implements Eight {
             return new int[]{};
         }
         for(int i = 0 ; i < input.length; i++) {
-            if(input[i] >= 0) count++;
+            if(input[i] > 0) count++;
             else sum += input[i];
         }
         return new int[] {count, sum};
